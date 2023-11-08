@@ -15,4 +15,4 @@ git add fichero
 commit -m "Comentario sobre el commit"
 push
 ```
-![Foto de GIT]((https://myoctocat.com/assets/images/base-octocat.svg)
+![Foto de GIT](https://myoctocat.com/assets/images/base-octocat.svg)
