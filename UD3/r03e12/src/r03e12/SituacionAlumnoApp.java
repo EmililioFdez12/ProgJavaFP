@@ -21,13 +21,7 @@ public class SituacionAlumnoApp {
 			System.out.println("El alumno promociona con una asignatura pendiente");
 		else if ( notaMates < 5 && notaLengua < 5 )
 			System.out.println("El alumno  no promociona");
-	
-		
-		
-		
-		sc.close();
-		
-
+			
+		sc.close();	
 	}
-
 }

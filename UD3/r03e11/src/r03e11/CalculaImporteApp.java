@@ -19,8 +19,6 @@ public class CalculaImporteApp {
 			System.out.println("Como la compra es superior a 100€ se le aplicara un descuento del 20%. "
 					+ "El importe a pagar es de " + descontado + "€");
 		}
-		
 		sc.close();
 	}
-
 }
