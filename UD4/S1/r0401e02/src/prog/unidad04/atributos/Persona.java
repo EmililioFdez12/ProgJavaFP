@@ -4,14 +4,14 @@ public class Persona {
   //Sexo
   
   
-  public String sexo;
+  public char sexo;
      
   public String nombre;
   
-  public int edad;
-  
   public String dni;
   
+  public int edad;
+    
   public double altura;
   
   public double peso;

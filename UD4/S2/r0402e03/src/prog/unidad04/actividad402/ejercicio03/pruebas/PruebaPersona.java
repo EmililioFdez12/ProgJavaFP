@@ -20,23 +20,25 @@ public class PruebaPersona {
     System.out.println(persona2.obtenerCadena());
     System.out.println(persona3.obtenerCadena());
     
-//    // Imprimimos los IMCs de las tres personas
-//    System.out.println("Imprimimos los IMCs de las tres personas");
-//    System.out.println("IMC Persona 1 = " + persona1.getIMC());
-//    System.out.println("IMC Persona 2 = " + persona2.getIMC());
-//    System.out.println("IMC Persona 3 = " + persona3.getIMC());
-//
-//    // Imprimimos si los pesos son correctos
-//    System.out.println("Imprimimos si los pesos de las personas es correcto o no");
-//    System.out.println("Peso correcto Persona 1 = " + persona1.getPesoCorrecto());
-//    System.out.println("Peso correcto Persona 2 = " + persona2.getPesoCorrecto());
-//    System.out.println("Peso correcto Persona 3 = " + persona3.getPesoCorrecto());
-//
-//    // Imprimimos si las personas son o no mayores de edad
-//    System.out.println("Son las personas mayores de edad?");
-//    System.out.println("Persona 1: " + (persona1.esMayorDeEdad() ? "si" : "no"));
-//    System.out.println("Persona 2: " + (persona2.esMayorDeEdad() ? "si" : "no"));
-//    System.out.println("Persona 3: " + (persona3.esMayorDeEdad() ? "si" : "no"));
-  }
+    // Imprimimos los IMCs de las tres personas
+    System.out.println("Imprimimos los IMCs de las tres personas");
+    System.out.println("IMC Persona 1 = " + persona1.getIMC());
+    System.out.println("IMC Persona 2 = " + persona2.getIMC());
+    System.out.println("IMC Persona 3 = " + persona3.getIMC());
+
+    // Imprimimos si los pesos son correctos
+    System.out.println("Imprimimos si los pesos de las personas es correcto o no");
+    System.out.println("Peso correcto Persona 1 = " + persona1.getPesoCorrecto());
+    System.out.println("Peso correcto Persona 2 = " + persona2.getPesoCorrecto());
+    System.out.println("Peso correcto Persona 3 = " + persona3.getPesoCorrecto());
+
+//     Imprimimos si las personas son o no mayores de edad
+    System.out.println("Son las personas mayores de edad?");
+    System.out.println("Persona 1: " + (persona1.esMayorDeEdad() ? "si" : "no"));
+    System.out.println("Persona 2: " + (persona2.esMayorDeEdad() ? "si" : "no"));
+    System.out.println("Persona 3: " + (persona3.esMayorDeEdad() ? "si" : "no"));
+    
+    System.out.println("Persona 3 DNI: "  + persona3.generarDNI());
+ }
 
 }
