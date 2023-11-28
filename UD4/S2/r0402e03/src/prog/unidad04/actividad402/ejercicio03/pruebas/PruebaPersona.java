@@ -38,7 +38,5 @@ public class PruebaPersona {
     System.out.println("Persona 2: " + (persona2.esMayorDeEdad() ? "si" : "no"));
     System.out.println("Persona 3: " + (persona3.esMayorDeEdad() ? "si" : "no"));
     
-    System.out.println("Persona 3 DNI: "  + persona3.generarDNI());
- }
-
+  }
 }

@@ -4,145 +4,146 @@ import java.util.Random;
 
 public class Persona {
 
-	private String nombre;
-	private int edad;
-	private char sexo;
-	private double peso;
-	private double estatura;
-	private double imc;
-	private String dni;
-	private int pesoCorrecto = 1;
+  private String nombre;
+  private int edad;
+  private char sexo;
+  private double peso;
+  private double estatura;
+  private double imc;
+  private boolean mayorEdad;
+  private String dni;
 
-	// constructores
-	/**
-	 * Constructores
-	 */
-	public Persona() {
-		this.nombre = "";
-		this.edad = 0;
-		this.sexo = 'M';
-		this.peso = 0.0;
-		this.estatura = 0.0;
-	}
+  public Persona() {
+    this.nombre = "";
+    this.edad = 0;
+    this.sexo = 'M';
+    this.peso = 0.0;
+    this.estatura = 0.0;
+    this.generarDNI();
+  }
 
-	/**
-	 * 
-	 * @param nombre
-	 * @param edad
-	 * @param sexo
-	 */
-	public Persona(String nombre, int edad, char sexo) {
-		this.nombre = nombre;
-		this.edad = edad;
-		this.sexo = sexo;
-	}
+  /**
+   * 
+   * @param nombre
+   * @param edad
+   * @param sexo
+   */
+  public Persona(String nombre, int edad, char sexo) {
+    this.nombre = nombre;
+    this.edad = edad;
+    this.sexo = sexo;
+  }
 
-	/**
-	 * 
-	 * @param nombre
-	 * @param edad
-	 * @param sexo
-	 * @param peso
-	 * @param estatura
-	 */
-	public Persona(String nombre, int edad, char sexo, double peso, double estatura) {
-		this.nombre = nombre;
-		this.edad = edad;
-		this.sexo = sexo;
-		this.peso = peso;
-		this.estatura = estatura;
-		this.dni = dni;
-	}
+  /**
+   * 
+   * @param nombre
+   * @param edad
+   * @param sexo
+   * @param peso
+   * @param estatura
+   */
+  public Persona(String nombre, int edad, char sexo, double peso, double estatura) {
+    this.nombre = nombre;
+    this.edad = edad;
+    this.sexo = sexo;
+    this.peso = peso;
+    this.estatura = estatura;
 
-	public String obtenerCadena() {
-		return "Nombre: " + nombre + "\sEdad: " + edad + "\sSexo: " + sexo + "\sPeso: " + peso + "\sEstatura: " + estatura;
-	}
+    if (estatura == 0) {
+      imc = 0;
+    } else
+      imc = (peso / (estatura * estatura));
 
-	public double getIMC() {
-		if (estatura == 0) {
-			return 0;
-		} else
-			return (peso / (estatura * estatura));
-	}
+    if (edad >= 18) {
+      mayorEdad = true;
+    } else {
+      mayorEdad = false;
+    }
+  }
 
-	public int getPesoCorrecto() {
-		if (imc < 20) {
-			return -1;
-		} else if (imc <= 25) {
-			return 0;
-		} else { 
-			return 1;
-		}
-	}
+  private String generarDNI() {
+    this.dni = "";
+    
+    // Generar número aleatorio de 8 dígitos.
+    Random generador = new Random();
+    int dniEnt = generador.nextInt(10000000, 99999999);
+    
+    // Convierto de int a String.
+    String dni = Integer.toString(dniEnt);
+    
+    // Se calcula la letra y se concatena con la parte numérica.
+    if (dniEnt % 23 == 0) {
+      this.dni = (dni + 'T');
+    } else if (dniEnt % 23 == 1) {
+      this.dni = (dni + 'R');
+    } else if (dniEnt % 23 == 2) {
+      this.dni = (dni + 'W');
+    } else if (dniEnt % 23 == 3) {
+      this.dni = (dni + 'A');
+    } else if (dniEnt % 23 == 4) {
+      this.dni = (dni + 'G');
+    } else if (dniEnt % 23 == 5) {
+      this.dni = (dni + 'M');
+    } else if (dniEnt % 23 == 6) {
+      this.dni = (dni + 'Y');
+    } else if (dniEnt % 23 == 7) {
+      this.dni = (dni + 'F');
+    } else if (dniEnt % 23 == 8) {
+      this.dni = (dni + 'P');
+    } else if (dniEnt % 23 == 9) {
+      this.dni = (dni + 'D');
+    } else if (dniEnt % 23 == 10) {
+      this.dni = (dni + 'X');
+    } else if (dniEnt % 23 == 11) {
+      this.dni = (dni + 'B');
+    } else if (dniEnt % 23 == 12) {
+      this.dni = (dni + 'N');
+    } else if (dniEnt % 23 == 13) {
+      this.dni = (dni + 'J');
+    } else if (dniEnt % 23 == 14) {
+      this.dni = (dni + 'Z');
+    } else if (dniEnt % 23 == 15) {
+      this.dni = (dni + 'S');
+    } else if (dniEnt % 23 == 16) {
+      this.dni = (dni + 'Q');
+    } else if (dniEnt % 23 == 17) {
+      this.dni = (dni + 'V');
+    } else if (dniEnt % 23 == 18) {
+      this.dni = (dni + 'H');
+    } else if (dniEnt % 23 == 19) {
+      this.dni = (dni + 'L');
+    } else if (dniEnt % 23 == 20) {
+      this.dni = (dni + 'C');
+    } else if (dniEnt % 23 == 21) {
+      this.dni = (dni + 'K');
+    } else if (dniEnt % 23 == 22) {
+      this.dni = (dni + 'E');
+    }
+    
+    return this.dni;
+  }
 
+  public double getIMC() {
+    return imc;
+  }
 
-	public boolean esMayorDeEdad() {
-		if (edad >= 18) {
-			return true;
-		} else {
-			return false;
-		}
-	}
+  public int getPesoCorrecto() {
+    if (imc < 20) {
+      return -1;
+    } else if (imc <= 25) {
+      return 0;
+    } else {
+      return 1;
+    }
+  }
 
-	public String generarDNI() {
-		Random generador = new Random();
-		int numeros = generador.nextInt(1, 8);
-		for (int i = 1; i <= 8; i++) {
-			numeros = generador.nextInt(1, 8);
-			System.out.print(numeros);
-		}
+  public boolean esMayorDeEdad() {
+    return mayorEdad;
+  }
 
-		int generadorLetra = (numeros % 23);
-
-		if (generadorLetra == 0) {
-			System.out.println("T");
-		} else if (generadorLetra == 1) {
-			System.out.println("R");
-		} else if (generadorLetra == 2) {
-			System.out.println("W");
-		} else if (generadorLetra == 3) {
-			System.out.println("A");
-		} else if (generadorLetra == 4) {
-			System.out.println("G");
-		} else if (generadorLetra == 5) {
-			System.out.println("M");
-		} else if (generadorLetra == 6) {
-			System.out.println("Y");
-		} else if (generadorLetra == 7) {
-			System.out.println("F");
-		} else if (generadorLetra == 8) {
-			System.out.println("P");
-		} else if (generadorLetra == 9) {
-			System.out.println("D");
-		} else if (generadorLetra == 10) {
-			System.out.println("X");
-		} else if (generadorLetra == 11) {
-			System.out.println("B");
-		} else if (generadorLetra == 12) {
-			System.out.println("N");
-		} else if (generadorLetra == 13) {
-			System.out.println("J");
-		} else if (generadorLetra == 14) {
-			System.out.println("Z");
-		} else if (generadorLetra == 15) {
-			System.out.println("S");
-		} else if (generadorLetra == 16) {
-			System.out.println("Q");
-		} else if (generadorLetra == 17) {
-			System.out.println("V");
-		} else if (generadorLetra == 18) {
-			System.out.println("H");
-		} else if (generadorLetra == 19) {
-			System.out.println("L");
-		} else if (generadorLetra == 20) {
-			System.out.println("C");
-		} else if (generadorLetra == 21) {
-			System.out.println("K");
-		} else if (generadorLetra == 22) {
-			System.out.println("E");
-		}
-		return dni;
-
-	}
+  public String obtenerCadena() {
+    return "Nombre: " + nombre + "\sEdad: " + edad + "\sSexo: " + sexo + "\sPeso: " + peso + "\sEstatura: " + estatura
+        + "\sDNI: " + dni;
+  }
 
 }
