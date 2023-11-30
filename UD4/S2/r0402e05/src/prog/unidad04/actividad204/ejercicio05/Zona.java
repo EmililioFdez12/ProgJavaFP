@@ -5,28 +5,29 @@ import java.util.Scanner;
 public class Zona {
 	Scanner sc = new Scanner(System.in);
 
-	private int entradasIniciales;
+	private int entradas;
 
-	public Zona(int entradasIniciales) {
-		this.entradasIniciales = entradasIniciales;
+	public Zona(int entradas) {
+		this.entradas = entradas;
 	}
 
+	/**
+	 * 
+	 * @return El numero de pruebas
+	 */
 	public int getEntradasPorVender() {
-		return entradasIniciales;
+		return entradas;
 	}
 
 	public int vender() {
-		System.out.print("Introduzca el numero de asientos a vender: ");
-		int entradasAVender = Integer.parseInt(sc.nextLine());
-
-		if (entradasIniciales < entradasAVender) {
+		if (entradas < this.entradas) {
 			System.out.print("El numero de entradas a vender es mayor de las entradas que disponemos");
 		} else {
 			System.out.println("Venta realizada correctamente");
-			entradasIniciales -= entradasAVender;
+			this.entradas -= entradas;
 		}
 
-		return entradasIniciales;
+		return entradas;
 	}
 
 }
