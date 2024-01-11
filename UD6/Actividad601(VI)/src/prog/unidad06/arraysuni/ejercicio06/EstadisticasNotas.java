@@ -9,6 +9,8 @@ public class EstadisticasNotas {
     this.arrayCalificaciones = new int[20];
     this.cantidadCalificaciones = 0;
   }
+  int longitudArray = 0;
+  int[] arrayPrueba = new int[longitudArray];
 
   public void addCalificacion(int calificacion) {
 
@@ -39,12 +41,11 @@ public class EstadisticasNotas {
   }
 
   public double calificacionModa() throws EstadisticasNotasException {
-    
     if(cantidadCalificaciones < 1) {
-      throw new EstadisticasNotasException();
+      throw new EstadisticasNotasException();      
     }
     return cantidadCalificaciones;
     
   }
-
+  
 }
