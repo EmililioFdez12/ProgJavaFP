@@ -1,9 +1,9 @@
-package prog.unidad06.arraysmulti.ejercicio4;
+package prog.unidad06.arraysmulti.ejercicio04;
 
 import java.util.Random;
 import java.util.Scanner;
 
-import prog.unidad06.arraysmulti.ejercicio2.TablaEnteraConTotales;
+import prog.unidad06.arraysmulti.ejercicio02.TablaEnteraConTotales;
 
 public class MiTablaAleatoriaConTotalesApp {
 

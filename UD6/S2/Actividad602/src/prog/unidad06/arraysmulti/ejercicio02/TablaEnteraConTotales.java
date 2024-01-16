@@ -1,4 +1,4 @@
-package prog.unidad06.arraysmulti.ejercicio2;
+package prog.unidad06.arraysmulti.ejercicio02;
 
 public class TablaEnteraConTotales {
 

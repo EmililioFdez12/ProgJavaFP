@@ -1,4 +1,4 @@
-package prog.unidad06.arraysmulti.ejercicio1;
+package prog.unidad06.arraysmulti.ejercicio01;
 
 public class MiPrimerArrayBidimensional {
 

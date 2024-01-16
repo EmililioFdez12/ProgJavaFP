@@ -1,8 +1,8 @@
-package prog.unidad06.arraysmulti.ejercicio5;
+package prog.unidad06.arraysmulti.ejercicio05;
 
 import java.util.Random;
 
-import prog.unidad06.arraysmulti.ejercicio2.TablaEnteraConTotales;
+import prog.unidad06.arraysmulti.ejercicio02.TablaEnteraConTotales;
 
 public class MaximoMinimoTablaAleatoriaApp {
 
@@ -40,16 +40,19 @@ public class MaximoMinimoTablaAleatoriaApp {
     int posicionFilaMinimo = 0;
     int posicionColumnaMinimo= 0;
     
+    // Recorremas la tabla y vamos actualizando el máximo
     for(int i = 0; i < filas; i++) {
     	for(int j = 0; j < columnas; j++) {
     		int valorActual = tablaAleatoria.getCasilla(i, j);
     		
+    		// Conseguimos el máximo
     		if (valorMaximo < valorActual) {
     			posicionFilaMaximo = i + 1 ;// + 1 para que empiece por la fila 0
       		posicionColumnaMaximo = j + 1;
     			valorMaximo = valorActual;
     		} 
     		
+    		// Conseguimos el mínimo
     		if (valorMinimo > valorActual) {
     			posicionFilaMinimo = i + 1 ;// + 1 para que empiece por la fila 0
       		posicionColumnaMinimo = j + 1;

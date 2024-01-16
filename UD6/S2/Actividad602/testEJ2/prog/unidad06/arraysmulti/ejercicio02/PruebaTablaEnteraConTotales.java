@@ -3,7 +3,7 @@ package prog.unidad06.arraysmulti.ejercicio02;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
-import prog.unidad06.arraysmulti.ejercicio2.TablaEnteraConTotales;
+import prog.unidad06.arraysmulti.ejercicio02.TablaEnteraConTotales;
 
 class PruebaTablaEnteraConTotales {
 

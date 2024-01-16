@@ -1,7 +1,8 @@
-package prog.unidad06.arraysmulti.ejercicio3;
+package prog.unidad06.arraysmulti.ejercicio03;
 
 import java.util.Scanner;
-import prog.unidad06.arraysmulti.ejercicio2.TablaEnteraConTotales;
+
+import prog.unidad06.arraysmulti.ejercicio02.TablaEnteraConTotales;
 
 public class MiTablaConTotalesApp {
 
