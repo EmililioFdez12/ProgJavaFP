@@ -51,6 +51,6 @@ public class CuboConSumasTotalesApp {
 			TablaEnteraUtils.imprimeTabla(cubo[plano], 1);
 			System.out.println("-----------");
 		}
-
+		sc.close();
 	}
 }
