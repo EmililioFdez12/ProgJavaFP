@@ -14,6 +14,7 @@ public class GestionaLibrosApp {
     Libro[] arrayLibros = new Libro[capacidad];
     int numeroFilas = 0;
     String promptBusqueda;
+    int promptBusquedaAnyo;
 
     do {
       System.out.println("GESTIÓN DE LIBROS");
@@ -85,15 +86,44 @@ public class GestionaLibrosApp {
                 + ", Año Publicacion: " + arrayLibros[i].getAnyoPublicacion());
             encontrado = true;
           }
-          
-          if (!encontrado) {
-            System.out.println("No se ha encontrado ningun libro con este titulo");
-          }
+        }
+        if (!encontrado) {
+          System.out.println("No se ha encontrado ningun libro con este titulo");
         }
         System.out.println();
       }
+      
+      if (eleccion == 4) {
 
-    } while (eleccion != 0);
+        System.out.println();
+        System.out.println("BUSCAR LIBRO POR AÑO PUBLICACION");
+        System.out.println("-----------------------");
+        System.out.print("Introduzca el texto de busqueda (no puede dejarse en blanco): ");
+        promptBusquedaAnyo = Integer.parseInt(sc.nextLine());
+
+        boolean encontrado = false;
+        // Recorremos el array
+        for (int i = 0; i < numeroFilas; i++) {
+          // Buscamos que el titulo de cada fila sea igual que el String prompBusqueda, si     
+          // es asi, se imprimirá la información del libro.
+          if (arrayLibros[i].getAnyoPublicacion()== promptBusquedaAnyo) {
+            System.out.println("Resultado busqeda");
+            System.out.println("Titulo: " + arrayLibros[i].getTitulo() + ", Autor: " + arrayLibros[i].getAutor()
+                + ", Año Publicacion: " + arrayLibros[i].getAnyoPublicacion());
+            encontrado = true;
+          }
+        }
+        if (!encontrado) {
+          System.out.println("No se ha encontrado ningun libro con este titulo");
+        }
+        System.out.println();
+      }
+      
+
+    } while (eleccion != 0); {
+      System.out.println("------------------");
+      System.out.println("Programa Terminado");
+    }
     sc.close();
   }
 }

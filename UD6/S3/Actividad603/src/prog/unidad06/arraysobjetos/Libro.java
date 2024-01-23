@@ -1,9 +1,8 @@
 package prog.unidad06.arraysobjetos;
 
-public class Libro {
-  private String titulo;
+public class Libro extends Publicacion {
   private String autor;
-  private int anyoPublicacion;
+
 
   public Libro(String titulo, String autor, int anyoPublicacion) {
     this.titulo = titulo;
@@ -11,16 +10,9 @@ public class Libro {
     this.anyoPublicacion = anyoPublicacion;
   }
 
-  public String getTitulo() {
-    return titulo;
-  }
 
   public String getAutor() {
     return autor;
-  }
-
-  public int getAnyoPublicacion() {
-    return anyoPublicacion;
   }
 
 }
