@@ -38,21 +38,35 @@ public class GestionaEstudiantesApp {
         }
 
         try {
-            // Preguntamos para agregar el libro
+            // Preguntamos para agregar el estudiante
             System.out.println();
             System.out.println("AGREGAR ESTUDIANTE");
             System.out.println("-------------");
             System.out.print("Introduzca el DNI del estudiante (sin espacios): ");
             String dni = sc.nextLine();
-            System.out.print("Introduzca el nombre del estudiante: ");
-            String nombreEstudiante = sc.nextLine();
-            System.out.print("Introduzca el curso del estudiante (Primero/Segundo/Master): ");
-            String curso = sc.nextLine();
 
             // Verificar que el DNI tiene un formato válido
             if (dni.length() != 9 || !Character.isLetter(dni.charAt(8))) {
                 throw new IllegalArgumentException("Formato incorrecto de DNI");
             }
+
+            // Verificar si el estudiante ya existe en el array
+            boolean dniRepetido = false;
+            for (int i = 0; i < numeroFilas; i++) {
+                if (arrayEstudiantes[i].getDni().equals(dni)) {
+                    dniRepetido = true;
+                }
+            }
+
+            if (dniRepetido) {
+               System.out.println("El DNI ingresado ya pertenece a otro estudiante");
+            }
+
+            // Si el DNI no está repetido, continuar con la creación del estudiante
+            System.out.print("Introduzca el nombre del estudiante: ");
+            String nombreEstudiante = sc.nextLine();
+            System.out.print("Introduzca el curso del estudiante (Primero/Segundo/Master): ");
+            String curso = sc.nextLine();
 
             // Creamos el estudiante con los datos introducidos
             Estudiante nuevoEstudiante = new Estudiante(dni, nombreEstudiante, curso);
@@ -67,6 +81,7 @@ public class GestionaEstudiantesApp {
             System.out.println("Error");
         }
     }
+
 
       if (eleccion == 2) {
         System.out.println();
@@ -161,7 +176,7 @@ public class GestionaEstudiantesApp {
           }
         }
         if (!encontrado) {
-          System.out.println("No se ha encontrado ningun libro con este titulo");
+          System.out.println("No se ha encontrado ningun estudiante con este DNI");
         }
         System.out.println();
       }

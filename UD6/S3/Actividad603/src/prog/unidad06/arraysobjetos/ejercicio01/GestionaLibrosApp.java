@@ -46,10 +46,10 @@ public class GestionaLibrosApp {
         System.out.print("Introduzca el nombre del autor del libro: ");
         String autorLibro = sc.nextLine();
         System.out.print("Introduzca el año de publicación del libro: ");
-        int añoPublicacionLibro = Integer.parseInt(sc.nextLine());
+        int anyoPublicacionLibro = Integer.parseInt(sc.nextLine());
 
         // Creamos el libro con los datos introducidos
-        Libro nuevoLibro = new Libro(tituloLibro, autorLibro, añoPublicacionLibro);
+        Libro nuevoLibro = new Libro(tituloLibro, autorLibro, anyoPublicacionLibro);
         // Rellena el array con el nuevo libro
         arrayLibros[numeroFilas] = nuevoLibro;
 
