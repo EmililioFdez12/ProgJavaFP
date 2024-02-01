@@ -14,8 +14,8 @@ public class DiccionarioSpanishEnglish {
   }
 
   public String traducir(String palabra) {
-    if (palabra == null) {
-      throw new IllegalArgumentException();
+    if (palabra.isBlank()) {
+      throw new IllegalArgumentException("Programa Terminado");
     }
         
     return diccionario.get(palabra);
