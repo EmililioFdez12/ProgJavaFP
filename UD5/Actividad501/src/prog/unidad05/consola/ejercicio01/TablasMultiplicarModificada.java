@@ -1,23 +1,36 @@
 package prog.unidad05.consola.ejercicio01;
 
-import java.util.Scanner;
-
 public class TablasMultiplicarModificada {
 
-  public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
+    private int numero;
 
-    System.out.print("De que numero entero quieres mostrar su tabla de multiplicar: ");
-    int numEntero = Integer.parseInt(sc.nextLine());
+    public TablasMultiplicarModificada(int numero) {
+      this.numero = numero;
 
-    System.out.println("Tabla del " + numEntero);
-
-    for (int i = 1; i <= 10; i++) {
-      int multiplicacion = (numEntero * i);
-
-      System.out.printf("%d X %d = %d%n",numEntero, i, multiplicacion );
+      if (numero <= 0) {
+        throw new IllegalArgumentException();
+      }
     }
-    sc.close();
+
+    public void imprimeTabla() {
+      System.out.println("Tabla del " + numero);
+
+      int longitudMaxima = 0;
+
+      for (int i = 1; i <= 10; i++) {
+        int multiplicacion = numero * i;
+        int longitudMultiplicacion = String.valueOf(multiplicacion).length();
+        if (longitudMultiplicacion > longitudMaxima) {
+          longitudMaxima = longitudMultiplicacion;
+        }
+      }
+
+      for (int i = 1; i <= 10; i++) {
+        int multiplicacion = (numero * i);
+        System.out.printf("%2d X %2d = %" + longitudMaxima + "d%n", numero, i, multiplicacion);
+
+      }
+    }
+
   }
 
-}
