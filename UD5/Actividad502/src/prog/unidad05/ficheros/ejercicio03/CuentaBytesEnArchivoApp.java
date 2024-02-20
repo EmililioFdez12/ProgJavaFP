@@ -1,10 +1,7 @@
 package prog.unidad05.ficheros.ejercicio03;
 
-import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +11,10 @@ public class CuentaBytesEnArchivoApp {
 
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
-    String rutaFichero = null; // javaLenguajeProgramacion.txt
-    int byteAContar = 0;
+    // Ruta del fichero
+    String rutaFichero = null;
+    // byteBuscado
+    int byteBuscado = 0;
     // Lista para almacenar las líneas
     List<Integer> bytes = new ArrayList<>();
 
@@ -23,15 +22,14 @@ public class CuentaBytesEnArchivoApp {
     if (args.length > 0) {
       rutaFichero = args[0];
       System.out.print("Introduce el valor del byte a contabilizar: ");
-      byteAContar = Integer.parseInt(sc.nextLine());
+      byteBuscado = Integer.parseInt(sc.nextLine());
       // Si no
     } else {
       System.out.print("Introduce la ruta al fichero:");
       rutaFichero = sc.nextLine();
       System.out.print("Introduce el valor del byte a contabilizar: ");
-        byteAContar = Integer.parseInt(sc.nextLine());
+      byteBuscado = Integer.parseInt(sc.nextLine());
     }
-
 
     try (FileInputStream flujoEntrada = new FileInputStream(rutaFichero)) {
       int byteArchivo = -1;
@@ -40,11 +38,11 @@ public class CuentaBytesEnArchivoApp {
         // Le uno a uno los bytes del archivo
         byteArchivo = flujoEntrada.read();
         if (byteArchivo != 1) {
-          // mete  todos lo bytes en una lista
+          // mete todos lo bytes en una lista
           bytes.add(byteArchivo);
         }
       } while (byteArchivo != -1);
-      
+
     } catch (FileNotFoundException e) {
       System.out.println("No se ha encontrado el fichero");
     } catch (IOException e) {
@@ -54,11 +52,12 @@ public class CuentaBytesEnArchivoApp {
     int contadorBytes = 0;
     // Para cada byte de la lista
     for (int byteLista: bytes) {
-      if (byteLista == byteAContar) {
+      // Si el byte es igual al que se busca
+      if (byteLista == byteBuscado) {
         contadorBytes++;
       }
     }
-    
-    System.out.println("El byte " + byteAContar + " aparece " + contadorBytes + " veces en el fichero " + rutaFichero);
+
+    System.out.println("El byte " + byteBuscado + " aparece " + contadorBytes + " veces en el fichero " + rutaFichero);
   }
 }
