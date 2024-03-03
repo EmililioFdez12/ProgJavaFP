@@ -23,8 +23,10 @@ public class QuitaComentariosApp {
       fichero1 = args[0];
       ficheroSalida = args[1];
     } else {
-      System.out.print("Ponga la ruta del archivo: ");
+      System.out.print("Ponga la ruta del archivo al que se le van a quitar los comentarios: ");
       fichero1 = sc.nextLine();
+      System.out.print("Ponga la ruta del archivo (resultado): ");
+      ficheroSalida = sc.nextLine();
     }
 
     // Leemos el primer archivo y almacenamos en una lista cada linea
