@@ -74,9 +74,7 @@ public class PruebasActividad703 {
 		
 		 final Expresion operacion = new Division(operandoIzquierdo, operandoDerecho);
 		
-		assertThrows(ExpresionException.class, () -> {
-			operacion.evaluar();
-		});
+		assertThrows(ExpresionException.class, () -> operacion.evaluar());
 
 	}
 	
