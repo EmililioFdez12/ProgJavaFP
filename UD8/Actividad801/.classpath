@@ -6,7 +6,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="src" path="bd"/>
+	<classpathentry kind="src" path="db"/>
 	<classpathentry kind="lib" path="C:/Users/alumnado/Downloads/sqlite-jdbc-3.41.0.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
